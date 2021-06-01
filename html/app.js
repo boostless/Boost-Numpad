@@ -1,6 +1,8 @@
 
 var code = ''
 var length = 4
+var show = true
+var c_code = ''
 $(function() {
     window.onload = (e) =>{
         window.addEventListener('message', function(event) {
@@ -8,6 +10,7 @@ $(function() {
             if(event.data.length > 4 || event.data.length <= 10){
               length = event.data.length
             }
+            show = event.data.show
             switch (event.data.action) {
                 case 'openui':
                   $('#display').text('Enter code')
@@ -22,7 +25,7 @@ $(function() {
         });
 
         $("#submit").click(function() {
-            if($('#display').text() == code){
+            if(c_code == code){
               $.post('http://Boost-Numpad/SubmitCode', 'true');
             }else{
               $('#display').addClass('text-red-500')
@@ -49,10 +52,25 @@ function add(num){
       $("#display").html('')
       $('#display').removeClass('text-red-500')
     }
-    if($("#display").text().length < length){
-      $("#display").text($("#display").text()+num)
+    if(getLenght() < length){
+      if(show){
+        $("#display").text($("#display").text()+num)
+        c_code = c_code + num
+      }else{
+        $("#display").html($("#display").html()+'<i class="fas fa-circle fa-xs"></i>')
+        c_code = c_code + num
+      }
     }else{
       $("#display").html('')
     }
+}
 
+function getLenght(){
+  if(show){
+    return $("#display").text().length;
+  }else{
+    return $('#display').children().length;
   }
+}
+
+
