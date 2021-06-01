@@ -18,11 +18,11 @@ function openNumpad(code,show,cb)
     uiOpen = true
 
     if length > 10 then
-        print('[Boost-Numpad] ERROR The code length is above 10 characters defaulting code to 1234')
+        print('[^5Boost-Numpad^0] ^1ERROR The code length is above 10 characters defaulting code to 1234')
         c_code = '1234'
         length = 4
     elseif length < 4 then
-        print('[Boost-Numpad] ERROR The code length is below 4 characters defaulting code to 1234')
+        print('[^5Boost-Numpad^0] ^1ERROR The code length is below 4 characters defaulting code to 1234')
         c_code = '1234'
         length = 4
     end
