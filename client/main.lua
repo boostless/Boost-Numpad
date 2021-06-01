@@ -29,7 +29,7 @@ function openNumpad(code,show,cb)
 
     SendNUIMessage({
         action = 'openui',
-        code = tostring(code),
+        code = c_code,
         length = length,
         show = show
     })
