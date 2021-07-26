@@ -32,3 +32,7 @@ else
 	TriggerServerEvent('nui_doorlock:updateState', closestDoor, locked, src) -- Broadcast new state of the door to everyone
 end
 ```
+
+# For more help join my discord server
+https://discord.com/invite/y4d842rhg5
+
