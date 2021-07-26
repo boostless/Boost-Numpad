@@ -18,6 +18,7 @@ $(function() {
                   break;
                 case 'closeui':
                   $('#container').fadeOut();
+                  c_code = '';
                   break;
                 default:
                     break;
@@ -30,12 +31,14 @@ $(function() {
             }else{
               $('#display').addClass('text-red-500')
               $('#display').text('Incorrect')
+              c_code = '';
             }
         });
 
         $("#clear").click(function() {
           $('#display').removeClass('text-red-500')
           $("#display").html('')
+          c_code = '';
         });
 
         document.onkeyup = function(event){
