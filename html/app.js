@@ -38,6 +38,7 @@ $(function() {
         $("#clear").click(function() {
           $('#display').removeClass('text-red-500')
           $("#display").html('')
+          c_code = '';
         });
 
         document.onkeyup = function(event){
